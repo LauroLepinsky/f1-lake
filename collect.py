@@ -6,10 +6,6 @@ import argparse
 
 pd.set_option("display.max_columns", None)
 
-# %%
-df = pd.read_parquet("data/2021_01_R.parquet")
-df
-
 
 # %%
 class CollectResults:

@@ -43,14 +43,17 @@ class Sender:
 
 
 # %%
-parser = argparse.ArgumentParser()
-parser.add_argument("--bucket", type=str)
-parser.add_argument("--bucket_path", default="f1/results/", type=str)
-parser.add_argument("--folder", default="data", type=str)
-args = parser.parse_args()
 
-if args.bucket:
-    send = Sender(args.bucket, args.bucket_path)
-    send.process_folder(args.folder)
-else:
-    print("Sem bucket definido")
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--bucket", type=str)
+    parser.add_argument("--bucket_path", default="f1/results/", type=str)
+    parser.add_argument("--folder", default="data", type=str)
+    args = parser.parse_args()
+
+    if args.bucket:
+        send = Sender(args.bucket, args.bucket_path)
+        send.process_folder(args.folder)
+    else:
+        print("Sem bucket definido")
